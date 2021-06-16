@@ -6,9 +6,20 @@ let router = express.Router();
 
 //models
 const adminSchema = require('../models/Admin');
-const { create } = require('../models/Admin');
 
 router.route('/')
+.get(async (req, res) => {
+    await adminSchema.findOne({ userName: req.body.userName}, async (err, results) => {
+        if (err) return res.status(500).json({msg: "Something went wrong."});
+        if (results.length === 0) return res.status(400).json({msg: "User does not exist."});
+
+        await bcrypt.compare(req.body.password, results.password, (error, result) => {
+            if (error) return res.status(500).json({msg: "Something went wrong."});
+            if (result) return res.status(200).json({msg: "Logged in!"});
+            return  res.status(400).json({msg: "Password does not match."});
+        })
+    })
+})
 .post(async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
