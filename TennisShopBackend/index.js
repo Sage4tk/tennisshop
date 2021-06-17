@@ -22,6 +22,7 @@ db.on('error', console.error.bind(console, 'connection error'));
 
 //import routes
 const auth = require('./routes/auth');
+const postItem = require('./routes/postItem');
 
 app.get('/', (req, res) => {
     res.send("All good!");
@@ -29,6 +30,7 @@ app.get('/', (req, res) => {
 
 //routes
 app.use('/auth', auth);
+app.use('/q', postItem);
 
 app.listen(4000, ()=> {
     console.log('Server is running at port 4000')

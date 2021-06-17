@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 let router = express.Router();
 
@@ -15,7 +16,13 @@ router.route('/')
 
         await bcrypt.compare(req.body.password, results.password, (error, result) => {
             if (error) return res.status(500).json({msg: "Something went wrong."});
-            if (result) return res.status(200).json({msg: "Logged in!"});
+            if (result) {
+                const accessToken = jwt.sign({ name: req.body.userName}, process.env.ACCESS_TOKEN);
+                return res.status(200).json({
+                    jwt: accessToken,
+                    msg: "Logged in!"
+                });
+            }
             return  res.status(400).json({msg: "Password does not match."});
         })
     })
