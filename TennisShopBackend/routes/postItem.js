@@ -11,9 +11,9 @@ const postSchema = require('../models/Post');
 
 router.route('/')
 .get(async (req, res) => {
-    const query = req.body.query;
+    const query = req.body.query
 
-    //send all documents if no query
+    // send all documents if no query
     if (!query) {
         try {
             const items = await postSchema.find();
@@ -24,14 +24,16 @@ router.route('/')
     }
 
     try {
-        const queryItem = await postSchema.find({brand: "das"})
+        const after = await JSON.parse(JSON.stringify(query))
+        const queryItem = await postSchema.find(after)
         
-        if (query.length === 0) {
+        if (queryItem.length === 0) {
             return res.status(400).json({msg: "This item does not exist"})
         }
 
         return res.status(200).json(queryItem)
-    } catch {
+    } catch (err) {
+        console.log(err)
         return res.status(500).json({msg: "Something went wrong."})
     }
 })
