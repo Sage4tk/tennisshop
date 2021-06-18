@@ -24,8 +24,7 @@ router.route('/')
     }
 
     try {
-        const after = await JSON.parse(JSON.stringify(query))
-        const queryItem = await postSchema.find(after)
+        const queryItem = await postSchema.find(query)
         
         if (queryItem.length === 0) {
             return res.status(400).json({msg: "This item does not exist"})
