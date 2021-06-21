@@ -1,2 +1,12 @@
 TennisShopBackend/.env
 TennisShopBackend/node_modules
+
+tennisfe/node_modules
+tennisfe/.pnp
+tennisfe/.pnp.js
+
+# testing
+tennisfe/coverage
+
+# production
+tennisfe/build
