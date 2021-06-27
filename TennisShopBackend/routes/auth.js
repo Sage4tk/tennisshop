@@ -9,10 +9,12 @@ let router = express.Router();
 const adminSchema = require('../models/Admin');
 
 router.route('/')
-.get(async (req, res) => {
+.post(async (req, res) => {
+    console.log(req.body)
     await adminSchema.findOne({ userName: req.body.userName}, async (err, results) => {
+        console.log(results)
         if (err) return res.status(500).json({msg: "Something went wrong."});
-        if (results.length === 0) return res.status(400).json({msg: "User does not exist."});
+        if (results === null) return res.json({msg: "User does not exist."});
 
         await bcrypt.compare(req.body.password, results.password, (error, result) => {
             if (error) return res.status(500).json({msg: "Something went wrong."});
@@ -27,7 +29,7 @@ router.route('/')
         })
     })
 })
-.post(async (req, res) => {
+.patch(async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
         const createAdmin = new adminSchema({
