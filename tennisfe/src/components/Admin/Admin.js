@@ -7,6 +7,8 @@ export default function Admin() {
 
     const [currentPage, setCurrentPage] = useState(0);
 
+    const [logged, setLogged] = useState(null)
+
     return (
         <div className="admin">
             <nav>
@@ -22,7 +24,7 @@ export default function Admin() {
                     </div>
                 </ul>
             </nav>
-            <Login currentPage={currentPage} />
+            <Login currentPage={currentPage} logged={logged} setLogged={setLogged} />
         </div>
     )
 }

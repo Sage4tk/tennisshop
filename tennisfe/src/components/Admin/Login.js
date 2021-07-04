@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 
-export default function Login({ currentPage }) {
+export default function Login({ currentPage, logged, setLogged }) {
+
+    const [failedAuth, setFailedAuth] = useState(false)
 
     const [inputText, setInputText] = useState({
         userName: "",
@@ -16,25 +18,38 @@ export default function Login({ currentPage }) {
 
     const submitForm = async (e) => {
         e.preventDefault();
-        console.log(inputText)
         try {
-            const data = await fetch('http://localhost:4000/auth', {
+            const res = await fetch('http://localhost:4000/auth', {
                 method:"POST",
                 headers: {
                     'Content-Type': 'application/json'
                     // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: JSON.stringify(inputText)
-            }).then(res => res.json())
-            .then(data => console.log(data))
+            })
+            const data = await res.json();
+            if (data.logged) {
+                setLogged({
+                    logged: true,
+                    jwt: data.jwt
+                })
+                setFailedAuth(false)
+            } else {
+                setFailedAuth(!failedAuth);
+            }
         } catch (err) {
             console.log(err)
         }
     }
 
+    const message = () => {
+        if (failedAuth) return (<p>Wrong username or password.</p>)
+        return (null);
+    }
+
     if (currentPage !== 0) return (null);
 
-    return (
+    if (!logged) return (
         <div>
             <form>
                 <div>
@@ -49,6 +64,11 @@ export default function Login({ currentPage }) {
                     <button onClick={submitForm}>Log in</button>
                 </div>
             </form>
+            {message()}
         </div>
+    )
+
+    return (
+        <h1>logged</h1>
     )
 }

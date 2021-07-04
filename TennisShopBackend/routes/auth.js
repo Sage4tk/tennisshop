@@ -22,7 +22,8 @@ router.route('/')
                 const accessToken = jwt.sign({ name: req.body.userName}, process.env.ACCESS_TOKEN);
                 return res.status(200).json({
                     jwt: accessToken,
-                    msg: "Logged in!"
+                    msg: "Logged in!",
+                    logged: true
                 });
             }
             return  res.status(400).json({msg: "Password does not match."});
