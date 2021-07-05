@@ -16,17 +16,21 @@ export default function Home() {
     }
 
     const updateScroll = () => {
-        setScrollPos(window.pageYOffset/20);
+        setScrollPos(window.pageYOffset/40);
     }
 
     useEffect(() => {
         window.addEventListener("scroll", updateScroll)
-    }, [])
 
+        return () => {
+            window.removeEventListener('scroll', updateScroll)
+        }
+    }, [])
+ 
     return (
         <div>
             <Nav />
-            <div className="landing" style={landingStyle} onScroll={updateScroll}>
+            <div className="landing" style={landingStyle}>
                 <h1>OWN THE COMPETITION.</h1>
             </div>
             <div className="test">
