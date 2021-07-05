@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 export default function Nav() {
     return (
             <header>
-                <div>
-                    <p><Link to="/">Home</Link></p>
+                <div className="logo">
+                    <p className="logo-word"><Link to="/">THE TENNIS SHOP</Link></p>
                 </div>
                 <nav>
                     <ul>

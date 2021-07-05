@@ -33,7 +33,8 @@ export default function Login({ currentPage, logged, setLogged }) {
                     logged: true,
                     jwt: data.jwt
                 })
-                setFailedAuth(false)
+                setFailedAuth(false);
+                
             } else {
                 setFailedAuth(!failedAuth);
             }
