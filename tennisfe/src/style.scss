@@ -62,16 +62,78 @@ header {
     background-color: rgb(56, 56, 56);
     width: 100vw;
     height: 80vh;
-    h1 {
+    &_message {
         position: absolute;
-        color: rgb(199, 0, 0);
-        right: 10%;
+        left: 10%;
         top: 42%;
-        font-size: 5rem;
+        h1 {
+            font-size: 5rem;
+            color: rgb(199, 0, 0);
+        }
+        p {
+            font-size: 2.3rem;
+            font-weight: bold;
+            color: rgb(8, 8, 8);
+            margin-top: -1rem;
+            margin-bottom: 1.4rem;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            padding: 1rem;
+            font-weight: bold;
+            transition: 1s;
+            &:hover {
+                background-color: rgb(199, 0, 0);
+            }
+        }
+
     }
 }
 
-.test {
-    width: 100vw;
-    height: 100vh;
+.landing-body {
+    padding: 2rem 0;
+    .category {
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .category-cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 1rem 12rem;
+            .card {
+                width: 300px;
+                height: 340px;
+                background-color: grey;
+                .card-info {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    &:hover > h3 {
+                        margin-top: 13rem;
+                    }
+                    h3 {
+                        margin-top: 14rem;
+                        font-size: 1.8rem;
+                        margin-bottom: 0.5rem;
+                        text-align: center;
+                        transition: 1s;
+                    }
+                    a {
+                       text-decoration: none;
+                       color: white;
+                       font-size: 1.2;
+                       background-color: black;
+                       padding: 1rem;
+                       align-self: center;
+                    }
+                }
+            }
+        }
+    }
 }
