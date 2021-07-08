@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//components
 import Nav from './Nav';
+import CategoryCard from './CategoryCard';
 
+//images
 import bgm from '../img/landingbgm.jpg';
+
+//date
+import category from '../data/category';
+
 
 export default function Home() {
 
@@ -28,24 +35,9 @@ export default function Home() {
                 <div className="category">
                     <h2>Shop by category</h2>
                     <div className="category-cards">
-                        <div className="card">
-                            <div className="card-info">
-                                <h3>RACKETS</h3>
-                                <Link to="/store">SHOP NOW</Link>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-info">
-                                <h3>RACKETS</h3>
-                                <Link to="/store">SHOP NOW</Link>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-info">
-                                <h3>RACKETS</h3>
-                                <Link to="/store">SHOP NOW</Link>
-                            </div>
-                        </div>
+                        {category.map((data) => (
+                            <CategoryCard data={data} />
+                        ))}
                     </div>
                 </div>
             </div>

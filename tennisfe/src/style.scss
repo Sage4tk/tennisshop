@@ -104,7 +104,7 @@ header {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            padding: 1rem 12rem;
+            padding: 1rem 24rem;
             .card {
                 width: 300px;
                 height: 340px;
@@ -123,6 +123,7 @@ header {
                         margin-bottom: 0.5rem;
                         text-align: center;
                         transition: 1s;
+                        color: white;
                     }
                     a {
                        text-decoration: none;
@@ -132,6 +133,45 @@ header {
                        padding: 1rem;
                        align-self: center;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .landing-body {
+        .category {
+            .category-cards {
+                padding: 1rem 14rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .landing-body {
+        .category {
+            .category-cards {
+                padding: 1rem 10rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .landing-body {
+        .category {
+            h2 {
+                margin: 2rem 0;
+            }
+            .category-cards {
+                padding: 0 1rem;
+                flex-direction: column;
+                align-items: center;
+                justify-content: normal;
+                .card {
+                    margin-bottom: 1rem;
                 }
             }
         }
