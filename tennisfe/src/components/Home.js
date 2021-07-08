@@ -41,6 +41,12 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <div className="contact-section">
+                <div className="contact-info">
+                    <h3>Get notified when new products come out!</h3>
+                    <Link to="/promos">SIGN UP</Link>
+                </div>
+            </div>
         </div>
     )
 }
