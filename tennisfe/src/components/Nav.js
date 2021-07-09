@@ -18,9 +18,6 @@ export default function Nav() {
                         <li>
                             <Link to="/club">Club</Link>
                         </li>
-                        <li>
-                            <Link to="/custom">About</Link>
-                        </li>
                     </ul>
                 </nav>
             </header>

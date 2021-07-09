@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 //components
 import Nav from './Nav';
 import CategoryCard from './CategoryCard';
+import Footer from './Footer';
 
 //images
 import bgm from '../img/landingbgm.jpg';
@@ -47,6 +48,13 @@ export default function Home() {
                     <Link to="/promos">SIGN UP</Link>
                 </div>
             </div>
+            <div className="about-section">
+                <div className="about-info">
+                    <h4>About</h4>
+                    <p>We are tennis shop retailer, service, and club. We aim to provide the best products and services to our customers in and outside the tennis court. With our wide selection of brands, we hope to provide the best solution for the variety of tennis players out there. Visit us!</p>
+                </div>
+            </div>
+            <Footer />
         </div>
     )
 }

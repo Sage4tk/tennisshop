@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Qahiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+$headerFont: 'Anton', sans-serif;
 
 * {
     margin: 0;
@@ -146,6 +148,43 @@ header {
                     }
                 }
             }
+        }
+    }
+}
+
+.about-section {
+    background-color: white;
+    padding: 8rem 22rem;
+    .about-info {
+        h4 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+footer {
+    background-color: rgb(158, 158, 158);
+    color: rgb(44, 44, 44);
+    padding: 4rem 8rem;
+    display: flex;
+    justify-content: space-evenly;
+    .footer-info {
+        h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        ul {
+            font-size: 1.2rem;
+            list-style: none;
+            li:not(:last-child) {
+                margin-bottom: 8px;
+            }
+            
         }
     }
 }
