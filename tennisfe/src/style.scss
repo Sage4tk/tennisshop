@@ -17,6 +17,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .admin {
     width: 100vw;
     height: 100vh;
@@ -275,7 +279,8 @@ footer {
             transition: 1s;
         }
         .show {
-            left: 0
+            left: 0;
+            transition: 1s;
         }
     }
 
