@@ -30,6 +30,15 @@ header {
     border-bottom: grey solid 1px;
     display: flex;
     align-items: center;
+    .burger {
+        display: none;
+        .burger-line {
+            width:1.50rem;
+            height: 0.25rem;
+            background-color: rgb(66, 66, 66);
+            margin-bottom: 4px;
+        }
+    }
     nav {
         position: absolute;
         left: 50%;
@@ -51,6 +60,7 @@ header {
                 }
             }
         }
+        
     }
     
     .logo {
@@ -174,6 +184,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     .footer-info {
+        width: 200px;
         h4 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
@@ -236,6 +247,38 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+    header {
+        position: relative;
+        nav {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top:0;
+            left: 100vw;
+            background-color: white;
+            margin-left: 0;
+            z-index: 1;
+            ul {
+                height: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+        }
+        .burger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: fixed;
+            right: 10%;
+            z-index: 1;
+            transition: 1s;
+        }
+        .show {
+            left: 0
+        }
+    }
+
     .landing-body {
         .category {
             h2 {

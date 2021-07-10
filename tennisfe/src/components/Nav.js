@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Nav() {
+
+    const [burger, setBurger] = useState(false);
+
     return (
             <header>
                 <div className="logo">
                     <p className="logo-word"><Link to="/">THE TENNIS SHOP</Link></p>
                 </div>
-                <nav>
+                <nav className={burger ? "" : "show"}>
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
@@ -20,6 +23,11 @@ export default function Nav() {
                         </li>
                     </ul>
                 </nav>
+                <div className="burger" onClick={() => setBurger(!burger)}>
+                        <div className="burger-line"></div>
+                        <div className="burger-line"></div>
+                        <div className="burger-line"></div>
+                </div>
             </header>
     )
 }
