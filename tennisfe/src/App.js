@@ -5,6 +5,7 @@ import './style.scss'
 
 //components
 import Home from './components/Home';
+import Shop from './components/Shop';
 import Admin from './components/Admin/Admin';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <>
         <Switch>
           <Route exact path="/" component={() => (<Home />)} />
+          <Route path="/store" component={() => (<Shop />)} />
           <Route path="/admin" component={Admin} />
         </Switch>
       </>

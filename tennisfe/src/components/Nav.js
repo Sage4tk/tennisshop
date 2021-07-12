@@ -10,7 +10,7 @@ export default function Nav() {
                 <div className="logo">
                     <p className="logo-word"><Link to="/">THE TENNIS SHOP</Link></p>
                 </div>
-                <nav className={burger ? "" : "show"}>
+                <nav className={burger ? "show" : ""}>
                     <ul>
                         <li>
                             <Link to="/">Home</Link>

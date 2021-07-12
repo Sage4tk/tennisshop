@@ -23,7 +23,7 @@ export default function Home() {
 
  
     return (
-        <div>
+        <div className="landing-bgm">
             <Nav />
             <div className="landing" style={landingStyle}>
                 <div className="landing_message">
@@ -37,7 +37,7 @@ export default function Home() {
                     <h2>Shop by category</h2>
                     <div className="category-cards">
                         {category.map((data) => (
-                            <CategoryCard data={data} />
+                            <CategoryCard data={data} key={data.category} />
                         ))}
                     </div>
                 </div>

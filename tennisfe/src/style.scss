@@ -8,16 +8,7 @@ $headerFont: 'Anton', sans-serif;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url('./img/bgm.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    overflow-x: hidden;
-}
-
-html {
+body, html {
     overflow-x: hidden;
 }
 
@@ -78,6 +69,14 @@ header {
             }
         }
     }
+}
+
+.landing-bgm {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('./img/bgm.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .landing {
@@ -186,6 +185,7 @@ footer {
     color: rgb(44, 44, 44);
     padding: 4rem 8rem;
     display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: space-evenly;
     .footer-info {
         width: 200px;
@@ -235,6 +235,22 @@ footer {
         .category {
             .category-cards {
                 padding: 1rem 14rem;
+            }
+        }
+    }
+}
+
+.shop {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    .shop-selection {
+        .shop-category {
+            display: flex;
+            flex-direction: column;
+            h4 {
+                font-size: 1.8rem;
+            }
+            label {
+                font-size: 1.3rem ;
             }
         }
     }
