@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
 //components
@@ -6,6 +6,10 @@ import Nav from './Nav';
 import Footer from './Footer';
 
 export default function Shop() {
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, [])
+
     let { param } = useParams();
     const [data, setData] = useState(null)
 

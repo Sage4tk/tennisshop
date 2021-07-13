@@ -6,17 +6,17 @@ import ball from '../img/tennisball.jpg';
 const shopCategory = [
     {
         category: "Racket",
-        link: "/shop/racket",
+        link: "/store/racket",
         img: racket
     },
     {
         category: "Apparel",
-        link: "/shop/apparel",
+        link: "/store/apparel",
         img: apparel
     },
     {
         category: "Tennis Balls",
-        link: "/shop/tennisballs",
+        link: "/store/tennisballs",
         img: ball
     }
 ];
