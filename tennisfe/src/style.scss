@@ -176,6 +176,7 @@ header {
         }
         p {
             font-size: 1.4rem;
+            color: rgb(56, 56, 56);
         }
     }
 }
@@ -187,6 +188,8 @@ footer {
     display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: space-evenly;
+    position: relative;
+    bottom: 0;
     .footer-info {
         width: 200px;
         h4 {
@@ -230,27 +233,33 @@ footer {
     }
 }
 
-@media only screen and (max-width: 1600px) {
-    .landing-body {
-        .category {
-            .category-cards {
-                padding: 1rem 14rem;
+.shop {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    .shop-selection {
+        width: 300px;
+        padding: 4rem 4rem 20rem 4rem;
+        border-right: solid rgb(44, 44, 44) 1px;
+        .shop-category:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+        .shop-category {
+            display: flex;
+            flex-direction: column;
+            h4 {
+                font-size: 1.4rem;
+            }
+            label {
+                font-size: 1.4rem;
             }
         }
     }
 }
 
-.shop {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    .shop-selection {
-        .shop-category {
-            display: flex;
-            flex-direction: column;
-            h4 {
-                font-size: 1.8rem;
-            }
-            label {
-                font-size: 1.3rem ;
+@media only screen and (max-width: 1600px) {
+    .landing-body {
+        .category {
+            .category-cards {
+                padding: 1rem 14rem;
             }
         }
     }

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //components
 import Nav from './Nav';
 import Footer from './Footer';
 
 export default function Shop() {
+    const [data, setData] = useState(null)
+
     return (
         <div>
             <Nav />
@@ -23,6 +25,9 @@ export default function Shop() {
                         <label><input type="radio" name="category" value="babolat" />Babolat</label>
                         <label><input type="radio" name="category" value="yonex" />Yonex</label>
                     </div>
+                </div>
+                <div className="shop-entry">
+                    
                 </div>
             </div>
             <Footer />
