@@ -234,6 +234,8 @@ footer {
 }
 
 .shop {
+    display: flex;
+    flex-direction: row;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     .shop-selection {
         width: 300px;

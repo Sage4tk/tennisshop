@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router';
 
 //components
 import Nav from './Nav';
 import Footer from './Footer';
 
 export default function Shop() {
+    let { param } = useParams();
     const [data, setData] = useState(null)
 
     return (
@@ -27,7 +29,7 @@ export default function Shop() {
                     </div>
                 </div>
                 <div className="shop-entry">
-                    
+                    <h1>{param}</h1>
                 </div>
             </div>
             <Footer />
