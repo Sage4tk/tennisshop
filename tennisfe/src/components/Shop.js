@@ -11,7 +11,8 @@ export default function Shop() {
     }, [])
 
     let { param } = useParams();
-    const [data, setData] = useState(null)
+    const [data, setData] = useState(null);
+    
 
     return (
         <div>
@@ -20,16 +21,16 @@ export default function Shop() {
                 <div className="shop-selection">
                     <div className="shop-category">
                         <h4>Category</h4>
-                        <label><input type="radio" name="category" value="all" defaultChecked />All</label>
-                        <label><input type="radio" name="category" value="racquet" />Racquets</label>
-                        <label><input type="radio" name="category" value="apparel" />Apparel</label>
-                        <label><input type="radio" name="category" value="ball" />Tennis Balls</label>
+                        <label><input type="radio" name="category" value="all" defaultChecked={!param?true:false} />All</label>
+                        <label><input type="radio" name="category" value="racquet" defaultChecked={param === "racquet"?true:false} />Racquets</label>
+                        <label><input type="radio" name="category" value="apparel" defaultChecked={param === "apparel"?true:false} />Apparel</label>
+                        <label><input type="radio" name="category" value="ball" defaultChecked={param === "tennisball"?true:false} />Tennis Balls</label>
                     </div>
                     <div className="shop-category">
                         <h4>Category</h4>
-                        <label><input type="radio" name="category" value="wilson" />Wilson</label>
-                        <label><input type="radio" name="category" value="babolat" />Babolat</label>
-                        <label><input type="radio" name="category" value="yonex" />Yonex</label>
+                        <label><input type="radio" name="category" value="wilson" defaultChecked={param === "wilson"?true:false} />Wilson</label>
+                        <label><input type="radio" name="category" value="babolat" defaultChecked={param === "babolat"?true:false} />Babolat</label>
+                        <label><input type="radio" name="category" value="yonex" defaultChecked={param === "yonex"?true:false} />Yonex</label>
                     </div>
                 </div>
                 <div className="shop-entry">
